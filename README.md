@@ -1,0 +1,1 @@
+# KISP_24_LopatinVasiliy_MD
