@@ -1,0 +1,1805 @@
+# **Create a project**
+
+## **Что нужно для старта** ##
+
+Понадобятся установленная программа Node.js версии LTS и обычный терминал на Windows, Mac или Linux
+
+## **Как создать проект** ##
+
+Откройте терминал и введите команду для создания стандартного проекта:npx create-expo-app@latest
+Если вы хотите посмотреть готовые примеры приложений и выбрать нужное интерактивно, введите:npx create-expo-app@latest --example
+Если вам нужен конкретный пример, например с виджетами, укажите его имя:npx create-expo-app@latest --example with-widgets
+
+## **Интеграция с ИИ** ##
+
+Новые проекты Expo уже содержат файлы настроек для ИИ-помощников, таких как Claude Code или Codex
+Для них есть официальный плагин, а для других ИИ-агентов можно отдельно поставить инструменты Expo Skills и Expo MCP Server
+
+# **Set up your environment**
+
+## **Где можно тестировать приложение** ##
+
+Разработчики Expo рекомендуют использовать реальные устройства, чтобы видеть приложение точно так же, как его увидят будущие пользователи
+Вы можете запускать проект на:
+Реальном андроид или ios устройстве или эмуляторе андроид, ios на пк
+
+## **Два способа разработки** ##
+
+**Приложение Expo Go** - это готовая песочница для студентов и новичков
+Она позволяет быстро протестировать основы, но имеет ограничения и не подходит для создания сложных коммерческих приложений
+
+**Собственная сборка** - это полноценная сборка вашего личного приложения, которая включает инструменты разработчика Expo
+Она поддерживает любые сторонние нативные модули и создается для серьезных коммерческих проектов
+
+**Как настроить Android-устройство** через Expo GoЧтобы быстро начать, вам нужно скачать приложение Expo Go из магазина Google Play на свой телефон. 
+После установки окружение будет готово для запуска кода.
+
+# **Start developing**
+
+1. **Запуск сервера разработки**
+
+Откройте терминал в папке проекта и введите команду: **npx expo start**
+
+2. **Открытие приложения на устройстве**
+
+После запуска команды в терминале появится QR-код Отсканируйте его камерой телефона или приложением Expo Go
+чтобы открыть проект на смартфоне Если вы используете эмулятор Android или симулятор iOS на компьютере нажмите клавишу «a» или «i» соответственно
+
+3. **Первое изменение кода**
+
+Откройте файл src/app/index.tsx в своем редакторе кода. Найдите блок с приветствием Welcometo Expo и измените текст.
+Как только вы сохраните файл, изменения мгновенно отобразятся на экране вашего устройства.
+
+# **Next steps**
+
+## **Очистка проекта для новой разработки** ##
+
+Вы можете легко удалить весь демонстрационный код, чтобы начать свой проект с чистого листа. Для этого введите в терминале команду: **npm run reset-project**
+Эта команда автоматически перенесет файлы-примеры в папку app-example и создаст совершенно новую, пустую папку app с базовым файлом index.tsx.
+
+## **Разработка, проверка и публикация** ##
+
+В официальной документации в разделе «Develop» вы найдете инструкции по созданию элементов интерфейса, 
+добавлению юнит-тестов и подключению нативных модулей. Когда приложение будет готово, вы сможете поделиться им с командой для тестирования, а 
+затем собрать финальную версию и отправить её в магазины приложений App Store и Google Play.
+
+# **Tools for development**
+
+## **Expo CLI** ##
+
+Это встроенный инструмент, который автоматически устанавливается вместе с проектом. 
+Он нужен для управления приложением в процессе разработки. Основные команды, которые вы будете использовать:
+
+* **npx expo start**	Запускает сервер разработки.
+* **npx expo prebuild**	Генерирует нативные каталоги для Android и iOS с помощью Prebuild.
+* **npx expo run:android**	Компилирует нативное Android-приложение локально.
+* **npx expo run:ios**	Компилирует нативное iOS-приложение локально.
+* **npx expo install** package-name	Раньше устанавливали новую библиотеку или проверяли и обновляли конкретные библиотеки в вашем проекте, добавляя опцию к этой команде.--fix
+* **npx expo lint**	Настройка и настройки ESLint. Если ESLint уже настроен, эта команда уничтожит файлы проекта.
+
+## **EAS CLI** ##
+
+Этот инструмент связывает ваш компьютер с вашим аккаунтом Expo. Он нужен для сборки и отправки готового приложения в магазины. 
+Устанавливается глобально на компьютер командой: **npm install --global eas-cli**.
+С его помощью можно публиковать приложения в App Store и Google Play, создавать установочные файлы, выпускать быстрые обновления в 
+обход магазинов и управлять цифровыми подписями.
+
+## **Expo Doctor** ##
+
+Утилита для проверки здоровья вашего проекта. Запускается в корне папки командой: **npx expo-doctor**
+Она сканирует файлы конфигурации, проверяет совместимость версий библиотек и ищет скрытые ошибки в настройках. 
+Если утилита найдет проблему, она сразу подскажет текстовое решение или даст ссылку на инструкцию.
+
+## **Orbit** ##
+
+Программа для macOS, Windows и Linux, которая помогает управлять сборками без рутины. 
+Orbit позволяет в один клик устанавливать готовые файлы приложений на подключенные устройства и эмуляторы, а 
+также запускать облачные проекты и обновления. На Mac её можно быстро поставить командой: **brew install expo-orbit**
+
+## **Expo Tools для VS Code** ##
+
+Официальное расширение для редактора VS Code. Оно добавляет умное автозаполнение и подсказки при редактировании файлов настроек Expo. 
+Также расширение позволяет использовать встроенный отладчик VS Code, чтобы ставить точки останова прямо в коде вашего приложения.
+
+## **Инструменты для быстрых прототипов** ##
+
+Snack - это полноценная песочница прямо в браузере. В ней можно писать код на React Native и сразу видеть результат на виртуальном экранебез установки программ на компьютер.
+#Expo Go — бесплатное приложение-плеер для смартфонов, чтобы быстро пробовать основы React Native. Подходит новичкам для тестов, но 
+имеет ограничения: в него нельзя встроить свои нативные модули. Для серьезных проектов используют собственные сборки.
+
+# **Navigation**
+
+## **Почему навигация не устроена из коробки** ## 
+
+Само ядро React Native содержит только базовые элементы интерфейса, обработку нажатий и работу с сетью.
+В нем нет встроенной навигации все эти функции добавляются с помощью сторонних библиотек сообщества. 
+Для проектов на Expo выбор обычно стоит между двумя популярными решениями: React Navigation и Expo Router.
+
+## **React Navigation** ##
+
+Это классическая библиотека, где навигация строится полностью через код. 
+С её помощью вы вручную создаете структуры экранов: стеки, нижние вкладки или боковое меню. 
+Она отлично подходит для реализации сложной логики переходов, кастомных анимаций и специфических интерфейсов. 
+Библиотека поддерживает плавные жесты, автоматические глубокие ссылки и строгую типизацию.
+
+## **Expo Router** ##
+
+Это файловая библиотека маршрутизации для проектов Expo и React Native. 
+Следуя правилам каталога приложений, файлы превращаются в маршруты и интегрируются с Expo for Expo CLI и пакетированием без дополнительной настройки.
+Библиотека также добавляет такие функции, как типизированные маршруты, динамические маршруты, ленивое объединение в разработке, статическое рендеринг для веба и автоматическое глубокое ссылание.
+
+# **Introduction**
+
+## About React Native and Expo tutorial ##
+
+Цель этого учебника — начать с Expo и познакомиться с Expo SDK. В ней будут рассмотрены следующие темы:
+
+* Инициализация проекта: создание приложения с использованием стандартного шаблона и поддержкой TypeScript.
+* Архитектура и навигация: реализация интерфейса с нижними вкладками на два экрана посредством Expo Router.
+* Вёрстка интерфейса: позиционирование элементов и адаптация макета с помощью Flexbox.
+* Интеграция с функциями ОС: вызов системного интерфейса для выбора изображений из медиатеки устройства.
+* Создание динамических элементов: разработка модального окна со списком стикеров на основе компонентов Modal и FlatList.
+* Обработка жестов: внедрение сенсорного управления для интерактивного взаимодействия со стикерами.
+* Работа с файловой системой: сохранение готовых снимков экрана на диск с помощью сторонних библиотек.
+* Кроссплатформенная оптимизация: обработка различий в поведении систем Android, iOS и веб-среды.
+* Финальная настройка: конфигурирование статус-бара, экрана загрузки (splash screen) и иконки приложения.
+
+## Методология и материалы ##
+
+Обучение ориентировано на практическое применение инструментов. В процессе изучения измененные участки кода выделяются цветом, а при наведении курсора отображаются пояснения. Полный исходный код проекта размещен в репозитории на GitHub для верификации и сверки.
+
+# **Create your first app**
+
+## Подготовка и создание проекта ##
+
+Для успешного прохождения материала необходимы базовые знания TypeScript и React. Создание нового проекта выполняется через утилиту create-expo-app, которая разворачивает проект со стандартным шаблоном, TypeScript и библиотекой Expo Router.
+
+## Настройка исходного кода и ресурсов ##
+
+1. Замена ассетов: необходимо скачать архив с ресурсами, распаковать его и заменить файлы по умолчанию в директории assets/images.
+2. Очистка шаблона: для создания приложения с нуля запускается скрипт очистки. Он переносит демонстрационный код в папку example, оставляя в каталоге src/app только два базовых файла (index.tsx и _layout.tsx).
+
+Команда для очистки: **npm run reset-project**
+
+## Запуск сервера разработки ##
+
+Для локального тестирования приложения на устройствах используется сервер Expo.
+Запуск сервера: **npx expo start**
+
+* Android: сканирование появившегося QR-кода через приложение Expo Go.
+* iOS: сканирование QR-кода стандартной камерой устройства.
+* Веб-версия: нажатие клавиши W в терминале для открытия проекта в браузере.
+
+## Изменение стартового экрана ##
+
+Файл src/app/index.tsx является главной точкой входа. В React Native стилизация элементов выполняется с помощью JavaScript-объектов через компонент StyleSheet, а не через привычные CSS-файлы. Поддерживаются стандартные веб-форматы цветов (HEX, RGBA, HSL и именованные цвета).
+После сохранения изменений сервер разработки автоматически обновляет интерфейс (Fast Refresh) на всех подключенных устройствах.
+
+# **Конспект от 19.09.2026**
+
+# **Introduction**  
+
+## **React Native и Expo** ## 
+
+Позволяют создавать универсальные приложения для Android, iOS и веб-платформ с использованием единой кодовой базы. 
+Данный туториал рассчитан на два часа самостоятельной работы и разбит на девять практических глав, в процессе которых с нуля создается приложение StickerSmash. Программа обучения охватывает настройку проекта на TypeScript, создание навигации с нижними вкладками через Expo Router, адаптивную верстку на Flexbox, а также работу с системными функциями: выбор изображений из галереи, управление жестами, использование модальных окон и сохранение скриншотов на диск с учетом платформенных различий. Процесс завершается настройкой иконки, статус-бара и экрана загрузки. Обучение построено на практике, а исходный код доступен на GitHub. Базовый интерфейс создается с помощью стандартных компонентов View и Text, которые стилизуются через JS-объекты StyleSheet.create.
+
+```
+import { StyleSheet, Text, View } from 'react-native';
+
+export default function Index() {
+  return (
+    <View style={styles.container}>
+      <Text>Hello world!</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+```
+
+# **Create your first app**
+
+## **Initialize a new Expo app** ##
+
+ Для создания проекта используется утилита create-expo-app. 
+ В терминале нужно выполнить команду npx create-expo-app@latest StickerSmash, выбрать версию SDK и перейти в созданную папку с помощью cd StickerSmash. Шаблон по умолчанию уже содержит базовый код, необходимые библиотеки и Expo Router.
+
+ ## **Download assets** ##
+
+ Необходимо скачать архив с готовыми ассетами, распаковать его и заменить дефолтные изображения в папке assets/images внутри проекта, после чего открыть проект в редакторе кода.
+
+ ## **Run reset-project script** ##
+
+ Чтобы собирать приложение с нуля, нужно очистить шаблонный код командой npm run reset-project. Скрипт перенесет старые файлы в архивную папку example, оставив в src/app только два чистых файла: index.tsx и _layout.tsx.
+
+ ## **Run the app on mobile and web** ##
+
+ Запуск сервера разработки выполняется командой npx expo start. В терминале появится QR-код: на Android его сканируют через приложение Expo Go, на iOS — через обычную камеру. Чтобы запустить веб-версию в браузере, нужно нажать клавишу W в терминале.
+
+ ## **Edit the index screen** ##
+
+ Файл src/app/index.tsx является главной точкой входа. Для изменения внешнего вида экрана вместо CSS используются JS-объекты и компонент StyleSheet.create. Чтобы поменять фон на темный, а текст на «Home screen» белого цвета:
+
+ ```
+ import { Text, View, StyleSheet } from 'react-native';
+
+export default function Index() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Home screen</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#25292e',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    color: '#fff',
+  },
+});
+ ```
+ 
+ # **Add navigation**
+
+ ## **Expo Router basics** ##
+
+ Это файловый маршрутизатор для React Native и веб-приложений. Папка src/app хранит только роуты и их макеты, где каждый файл становится экраном. Файл src/app/_layout.tsx является корневым макетом, задающим общие элементы интерфейса. Названия файлов вроде index.tsx привязываются к корню родительской папки (роут /), а сами файлы экспортируют React-компонент по умолчанию. Структура навигации едина для Android, iOS и Web.
+
+ ## **Add a new screen to the stack** ##
+
+ Для создания нового экрана создается файл src/app/about.tsx с текстом «About screen». Чтобы управлять заголовочной частью (Header) этих страниц, в корневом макете src/app/_layout.tsx объявляется компонент <Stack> с настройками options для каждого экрана:
+
+ ```
+ import { Text, View, StyleSheet } from 'react-native';
+
+export default function AboutScreen() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>About screen</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#25292e',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    color: '#fff',
+  },
+});
+ ```
+
+ ## **Navigate between screens** ##
+
+ Переход между экранами выполняется с помощью компонента Link из библиотеки expo-router. В файле src/app/index.tsx он импортируется и используется с указанием пути в пропсе href="/about", поддерживая стандартную стилизацию текста:
+
+ ```
+ import { Text, View, StyleSheet } from 'react-native';
+ import { Link } from 'expo-router'; 
+
+export default function Index() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Home screen</Text>
+      <Link href="/about" style={styles.button}>
+        Go to About screen
+      </Link>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#25292e',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    color: '#fff',
+  },
+  button: {
+    fontSize: 20,
+    textDecorationLine: 'underline',
+    color: '#fff',
+  },
+});
+ ```
+
+## **Add a not-found route** ##
+
+Для обработки несуществующих путей используется служебный файл src/app/+not-found.tsx. Компонент внутри него предотвращает падение приложения на мобильных устройствах или ошибку 404 на сайте, предлагая пользователю ссылку для возврата на главную:
+
+```
+import { View, StyleSheet } from 'react-native';
+import { Link, Stack } from 'expo-router';
+
+export default function NotFoundScreen() {
+  return (
+    <>
+      <Stack.Screen options={{ title: 'Oops! Not Found' }} />
+      <View style={styles.container}>
+        <Link href="/" style={styles.button}>
+          Go back to Home screen!
+        </Link>
+      </View>
+    </>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#25292e',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  button: {
+    fontSize: 20,
+    textDecorationLine: 'underline',
+    color: '#fff',
+  },
+});
+```
+
+## **Add a bottom tab navigator** ##
+
+Нижняя панель вкладок реализуется через создание специальной папки (tabs) внутри src/app. Существующие файлы index.tsx и about.tsx переносятся внутрь этой папки, а рядом создается локальный макет (tabs)/_layout.tsx. Корневой макет src/app/_layout.tsx при этом обновляется, чтобы скрыть глобальный заголовок для группы вкладок.
+
+## **Install @expo/vector-icons** ##
+
+Чтобы добавить иконки к вкладкам, сервер разработки останавливается комбинацией Ctrl + C, и запускается установка пакета командой npx expo install @expo/vector-icons. После завершения сервер перезапускается через npx expo start.Update bottom tab navigator appearance. Иконки настраиваются в файле макета вкладок src/app/(tabs)/_layout.tsx с использованием набора Ionicons. Функция tabBarIcon принимает параметры состояния активности вкладки и цвета, возвращая соответствующий графический компонент для каждого роута:
+
+```
+import { Tabs } from 'expo-router';
+
+import Ionicons from '@expo/vector-icons/Ionicons';
+
+
+export default function TabLayout() {
+  return (
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: '#ffd33d',
+      }}
+    >
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: 'Home',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'home-sharp' : 'home-outline'} color={color} size={24} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="about"
+        options={{
+          title: 'About',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'information-circle' : 'information-circle-outline'} color={color} size={24}/>
+          ),
+        }}
+      />
+    </Tabs>
+  );
+}
+```
+
+# **Build a screen**
+
+## **Break down the screen** ##
+
+Интерфейс первого экрана делится на две основные части: по центру располагается крупное изображение, а в нижней половине — две кнопки. Первая кнопка имеет желтую рамку и содержит иконку рядом с текстом. Вторая кнопка выполнена в стандартном текстовом стиле.
+
+## **Display the image** ##
+
+Для работы с графикой используется кроссплатформенный компонент Image из библиотеки expo-image, которая уже встроена в шаблон. В файле src/app/(tabs)/index.tsx создается переменная PlaceholderImage, куда через require импортируется фоновое изображение. Компонент оборачивается в контейнер и стилизуется с фиксированными размерами и скруглением углов:
+
+```
+import { View, StyleSheet } from 'react-native';
+ import { Image } from 'expo-image'; 
+
+
+const PlaceholderImage = require('@/assets/images/background-image.png');
+
+
+export default function Index() {
+  return (
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>
+        <Image source={PlaceholderImage} style={styles.image} />
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#25292e',
+    alignItems: 'center',
+  },
+  imageContainer: {
+    flex: 1,
+  },
+  image: {
+    width: 320,
+    height: 440,
+    borderRadius: 18,
+  },
+});
+```
+
+## **Divide components into files** ##
+
+Навигационный каталог src/app должен содержать только роуты и макеты. Для кастомных элементов создается отдельная папка src/components. Логика отображения картинки переносится в новый файл src/components/image-viewer.tsx. На главном экране компонент импортируется через абсолютный алиас:
+
+```
+import { ImageSourcePropType, StyleSheet } from 'react-native';
+import { Image } from 'expo-image';
+
+type Props = {
+  imgSource: ImageSourcePropType;
+};
+
+export default function ImageViewer({ imgSource }: Props) {
+  return <Image source={imgSource} style={styles.image} />;
+}
+
+const styles = StyleSheet.create({
+  image: {
+    width: 320,
+    height: 440,
+    borderRadius: 18,
+  },
+});
+```
+
+Импортируйте и используйте его в src/app/(tabs)/index.tsx:ImageViewer
+
+```
+import { StyleSheet, View } from 'react-native';
+
+import ImageViewer from '@/components/image-viewer'; 
+
+const PlaceholderImage = require('@/assets/images/background-image.png');
+
+export default function Index() {
+  return (
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>
+        <ImageViewer imgSource={PlaceholderImage} />
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#25292e',
+    alignItems: 'center',
+  },
+  imageContainer: {
+    flex: 1,
+  },
+});
+```
+
+## **Create buttons using Pressable** ##
+
+Для обработки нажатий используется компонент Pressable. В папке компонентов создается универсальная кнопка src/components/button.tsx. При клике на нее вызывается стандартное окно alert(). Кнопки добавляются в нижнюю часть (footerContainer) главного экрана src/app/(tabs)/index.tsx:
+
+```
+import { StyleSheet, View, Pressable, Text } from 'react-native';
+
+type Props = {
+  label: string;
+};
+
+export default function Button({ label }: Props) {
+  return (
+    <View style={styles.buttonContainer}>
+      <Pressable style={styles.button} onPress={() => alert('You pressed a button.')}>
+        <Text style={styles.buttonLabel}>{label}</Text>
+      </Pressable>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    width: 320,
+    height: 68,
+    marginHorizontal: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 3,
+  },
+  button: {
+    borderRadius: 10,
+    width: '100%',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+  buttonLabel: {
+    color: '#fff',
+    fontSize: 16,
+  },
+});
+```
+
+Приложение показывает оповещение при нажатии любой из кнопок на экране. Это происходит из-за призывов к его реквизиту. Давайте импортируем этот компонент в файл src/app/(tabs)/index.tsx и добавим стили, которые инкапсулируют эти кнопки:<Pressable>alert()onPress<View>
+
+```
+import { View, StyleSheet } from 'react-native';
+
+import Button from '@/components/button'; 
+import ImageViewer from '@/components/image-viewer';
+
+const PlaceholderImage = require("@/assets/images/background-image.png");
+
+export default function Index() {
+  return (
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>
+        <ImageViewer imgSource={PlaceholderImage} />
+      </View>
+      <View style={styles.footerContainer}>
+        <Button label="Choose a photo" />
+        <Button label="Use this photo" />
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#25292e',
+    alignItems: 'center',
+  },
+  imageContainer: {
+    flex: 1,
+  },
+  footerContainer: {
+    flex: 1 / 3,
+    alignItems: 'center',
+  },
+});
+```
+
+## **Enhance the reusable button component** ##
+
+Чтобы визуально разделить кнопки, в компонент Button добавляется необязательный проп theme?: 'primary'. Для главной кнопки с этой темой будет применяться альтернативная верстка: желтая граница контейнера, белый фон самой кнопки, черная окраска текста и иконка FontAwesome из библиотеки @expo/vector-icons, расположенная в одном ряду перед текстовой меткой:
+
+```
+import { StyleSheet, View, Pressable, Text } from 'react-native';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+
+type Props = {
+  label: string;
+  theme?: 'primary';
+};
+
+export default function Button({ label, theme }: Props) {
+  if (theme === 'primary') {
+    return (
+      <View
+        style={[
+          styles.buttonContainer,
+          { borderWidth: 4, borderColor: '#ffd33d', borderRadius: 18 },
+        ]}>
+        <Pressable
+          style={[styles.button, { backgroundColor: '#fff' }]}
+          onPress={() => alert('You pressed a button.')}>
+          <FontAwesome name="picture-o" size={18} color="#25292e" style={styles.buttonIcon} />
+          <Text style={[styles.buttonLabel, { color: '#25292e' }]}>{label}</Text>
+        </Pressable>
+      </View>
+    );
+  }
+
+  return (
+    <View style={styles.buttonContainer}>
+      <Pressable style={styles.button} onPress={() => alert('You pressed a button.')}>
+        <Text style={styles.buttonLabel}>{label}</Text>
+      </Pressable>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    width: 320,
+    height: 68,
+    marginHorizontal: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 3,
+  },
+  button: {
+    borderRadius: 10,
+    width: '100%',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+  buttonIcon: {
+    paddingRight: 8,
+  },
+  buttonLabel: {
+    color: '#fff',
+    fontSize: 16,
+  },
+});
+```
+
+# **Use an image picker**
+
+## **Install expo-image-picker** ##
+
+Стандартные компоненты React Native не умеют работать с медиагалереей устройства, поэтому используется библиотека expo-image-picker. Для её установки сервер разработки останавливается через Ctrl + C, после чего выполняется команда npx expo install expo-image-picker. Она автоматически добавляет зависимость в package.json, далее сервер перезапускается через npx expo start:
+
+```
+npx expo install expo-image-picker
+```
+
+## **Pick an image from the device's media library** ##
+
+Метод launchImageLibraryAsync() открывает системный интерфейс выбора медиафайлов. В файле src/app/(tabs)/index.tsx пишется асинхронная функция pickImageAsync. В её настройках параметр mediaTypes: 'images' ограничивает выбор только картинками, а allowsEditing: true разрешает пользователю кадрировать (обрезать) фото перед подтверждением на Android и iOS:
+
+```
+// ...rest of the import statements remain unchanged
+ import * as ImagePicker from 'expo-image-picker';
+
+export default function Index() {
+  const pickImageAsync = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ['images'],
+      allowsEditing: true,
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      console.log(result);
+    } else {
+      alert('You did not select any image.');
+    }
+  };
+
+  // ...rest of the code remains same
+}
+```
+
+## **Update the button component** ##
+
+Чтобы связать функцию выбора с кнопкой, в файле src/components/button.tsx универсальный компонент Button расширяется новым пропом onPress?: () => void. В коде также завершается верстка темы primary: добавляется иконка FontAwesome (значок picture-o) перед текстом, белый фон для внутренней кнопки и желтая обводка для контейнера:
+
+```
+import { StyleSheet, View, Pressable, Text } from 'react-native';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+
+type Props = {
+  label: string;
+  theme?: 'primary';
+  onPress?: () => void;
+};
+
+export default function Button({ label, theme, onPress }: Props) {
+  if (theme === 'primary') {
+    return (
+      <View
+        style={[
+          styles.buttonContainer,
+          { borderWidth: 4, borderColor: '#ffd33d', borderRadius: 18 },
+        ]}>
+        <Pressable style={[styles.button, { backgroundColor: '#fff' }]} onPress={onPress}>
+          <FontAwesome name="picture-o" size={18} color="#25292e" style={styles.buttonIcon} />
+          <Text style={[styles.buttonLabel, { color: '#25292e' }]}>{label}</Text>
+        </Pressable>
+      </View>
+    );
+  }
+
+  return (
+    <View style={styles.buttonContainer}>
+      <Pressable style={styles.button} onPress={() => alert('You pressed a button.')}>
+        <Text style={styles.buttonLabel}>{label}</Text>
+      </Pressable>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    width: 320,
+    height: 68,
+    marginHorizontal: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 3,
+  },
+  button: {
+    borderRadius: 10,
+    width: '100%',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+  buttonIcon: {
+    paddingRight: 8,
+  },
+  buttonLabel: {
+    color: '#fff',
+    fontSize: 16,
+  },
+});
+```
+
+ src/app/(tabs)/index.tsx добавьте функцию в проп на первом .pickImageAsync()onPressButton:
+
+ ```
+ import { View, StyleSheet } from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
+
+import Button from '@/components/button';
+import ImageViewer from '@/components/image-viewer';
+
+const PlaceholderImage = require('@/assets/images/background-image.png');
+
+export default function Index() {
+  const pickImageAsync = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ['images'],
+      allowsEditing: true,
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      console.log(result);
+    } else {
+      alert('You did not select any image.');
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>
+        <ImageViewer imgSource={PlaceholderImage} />
+      </View>
+      <View style={styles.footerContainer}>
+        <Button theme="primary" label="Choose a photo" onPress={pickImageAsync} />
+        <Button label="Use this photo" />
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#25292e',
+    alignItems: 'center',
+  },
+  imageContainer: {
+    flex: 1,
+  },
+  footerContainer: {
+    flex: 1 / 3,
+    alignItems: 'center',
+  },
+});
+ ```
+
+ Функция вызывает и затем обрабатывает результат. Метод возвращает объект с информацией о выбранном изображении.pickImageAsync()ImagePicker.launchImageLibraryAsync()launchImageLibraryAsync()
+
+Вот пример объекта и свойств, которые он содержит:result
+
+```
+{
+  "assets": [
+    {
+      "assetId": null,
+      "base64": null,
+      "duration": null,
+      "exif": null,
+      "fileName": "ea574eaa-f332-44a7-85b7-99704c22b402.jpeg",
+      "fileSize": 4513577,
+      "height": 4570,
+      "mimeType": "image/jpeg",
+      "rotation": null,
+      "type": "image",
+      "uri": "file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FStickerSmash-13f21121-fc9d-4ec6-bf89-bf7d6165eb69/ImagePicker/ea574eaa-f332-44a7-85b7-99704c22b402.jpeg",
+      "width": 2854
+    }
+  ],
+  "canceled": false
+}
+```
+
+## **Use the selected image** ##
+
+При успешном выборе метод возвращает объект, содержащий массив assets. Из первого элемента этого массива нужно забрать локальный путь к файлу (uri). Для динамического обновления экрана в src/app/(tabs)/index.tsx импортируется хук useState, где заводится состояние selectedImage. Если пользователь успешно выбрал фото (!result.canceled), путь сохраняется через setSelectedImage(result.assets[0].uri). Полученное состояние передается пропом в компонент отображения картинки: 
+
+```
+import { View, StyleSheet } from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
+
+import { useState } from 'react';
+
+
+import Button from '@/components/button';
+import ImageViewer from '@/components/image-viewer';
+
+const PlaceholderImage = require('@/assets/images/background-image.png');
+
+export default function Index() {
+  const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
+
+  const pickImageAsync = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ['images'],
+      allowsEditing: true,
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setSelectedImage(result.assets[0].uri);
+    } else {
+      alert('You did not select any image.');
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>
+        <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage} />
+      </View>
+      <View style={styles.footerContainer}>
+        <Button theme="primary" label="Choose a photo" onPress={pickImageAsync} />
+        <Button label="Use this photo" />
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#25292e',
+    alignItems: 'center',
+  },
+  imageContainer: {
+    flex: 1,
+  },
+  footerContainer: {
+    flex: 1 / 3,
+    alignItems: 'center',
+  },
+});
+```
+
+# **Create a modal**
+
+## **Declare a state variable to show buttons** ##
+
+Перед созданием модального окна настраивается логика переключения кнопок. В файле src/app/(tabs)/index.tsx создается булево состояние showAppOptions со значением false по умолчанию. Оно скрывает панель опций до тех пор, пока пользователь не выберет изображение. Как только фото выбрано (внутри pickImageAsync), или нажата кнопка «Use this photo», значение showAppOptions меняется на true, переключая интерфейс нижней части экрана с помощью тернарного оператора: 
+
+```
+import { View, StyleSheet } from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
+import { useState } from 'react';
+
+import Button from '@/components/button';
+import ImageViewer from '@/components/image-viewer';
+
+const PlaceholderImage = require('@/assets/images/background-image.png');
+
+export default function Index() {
+  const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
+  const [showAppOptions, setShowAppOptions] = useState<boolean>(false);
+
+  const pickImageAsync = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ['images'],
+      allowsEditing: true,
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setSelectedImage(result.assets[0].uri);
+      setShowAppOptions(true);
+    } else {
+      alert('You did not select any image.');
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>
+        <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage} />
+      </View>
+      {showAppOptions ? (
+        <View />
+      ) : (
+        <View style={styles.footerContainer}>
+          <Button theme="primary" label="Choose a photo" onPress={pickImageAsync} />
+          <Button label="Use this photo" onPress={() => setShowAppOptions(true)} />
+        </View>
+      )}
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#25292e',
+    alignItems: 'center',
+  },
+  imageContainer: {
+    flex: 1,
+  },
+  footerContainer: {
+    flex: 1 / 3,
+    alignItems: 'center',
+  },
+});
+```
+
+## **Add buttons** ##
+
+Новая панель опций состоит из трех кнопок, расположенных в один ряд. В каталоге src/components создаются два новых файла компонентов:
+
+```
+import { View, Pressable, StyleSheet } from 'react-native';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+
+type Props = {
+  onPress: () => void;
+};
+
+export default function CircleButton({ onPress }: Props) {
+  return (
+    <View style={styles.circleButtonContainer}>
+      <Pressable style={styles.circleButton} onPress={onPress}>
+        <MaterialIcons name="add" size={38} color="#25292e" />
+      </Pressable>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  circleButtonContainer: {
+    width: 84,
+    height: 84,
+    marginHorizontal: 60,
+    borderWidth: 4,
+    borderColor: '#ffd33d',
+    borderRadius: 42,
+    padding: 3,
+  },
+  circleButton: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 42,
+    backgroundColor: '#fff',
+  },
+});
+```
+
+Для отображения значка плюса эта кнопка использует иконки, установленные из библиотеки. MaterialIcons@expo/vector-icons
+
+Две другие кнопки также используются для отображения вертикально выровненных текстовых меток и иконок. Создайте файл с именем icon-button.tsx внутри каталога src/components. Этот компонент принимает три реквизита: MaterialIcons
+
+* **icon:** название, соответствующее иконке библиотеки.MaterialIcons
+* **label:** текстовая метка, отображаемая на кнопке.
+* **onPress:** эта функция вызывается, когда пользователь нажимает кнопку.
+
+```
+import { Pressable, StyleSheet, Text } from 'react-native';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+
+type Props = {
+  icon: keyof typeof MaterialIcons.glyphMap;
+  label: string;
+  onPress: () => void;
+};
+
+export default function IconButton({ icon, label, onPress }: Props) {
+  return (
+    <Pressable style={styles.iconButton} onPress={onPress}>
+      <MaterialIcons name={icon} size={24} color="#fff" />
+      <Text style={styles.iconButtonLabel}>{label}</Text>
+    </Pressable>
+  );
+}
+
+const styles = StyleSheet.create({
+  iconButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  iconButtonLabel: {
+    color: '#fff',
+    marginTop: 12,
+  },
+});
+```
+
+Внутри src/app/(tabs)/index.tsx:
+
+* Импортируйте компоненты и для их отображения.
+* Добавьте три временных функции для этих кнопок. Функция срабатывает при нажатии кнопки сброса, вызывая повторное появление кнопки выбора изображения. Функционал для остальных двух функций мы добавим позже.
+
+```
+import { View, StyleSheet } from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
+import { useState } from 'react';
+
+import Button from '@/components/button';
+import ImageViewer from '@/components/image-viewer';
+
+import IconButton from '@/components/icon-button';
+import CircleButton from '@/components/circle-button';
+
+
+const PlaceholderImage = require('@/assets/images/background-image.png');
+
+export default function Index() {
+  const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
+  const [showAppOptions, setShowAppOptions] = useState<boolean>(false);
+
+  const pickImageAsync = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ['images'],
+      allowsEditing: true,
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setSelectedImage(result.assets[0].uri);
+      setShowAppOptions(true);
+    } else {
+      alert('You did not select any image.');
+    }
+  };
+
+  const onReset = () => {
+    setShowAppOptions(false);
+  };
+
+  const onAddSticker = () => {
+    // we will implement this later
+  };
+
+  const onSaveImageAsync = async () => {
+    // we will implement this later
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>
+        <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage} />
+      </View>
+      {showAppOptions ? (
+        <View style={styles.optionsContainer}>
+          <View style={styles.optionsRow}>
+            <IconButton icon="refresh" label="Reset" onPress={onReset} />
+            <CircleButton onPress={onAddSticker} />
+            <IconButton icon="save-alt" label="Save" onPress={onSaveImageAsync} />
+          </View>
+        </View>
+      ) : (
+        <View style={styles.footerContainer}>
+          <Button theme="primary" label="Choose a photo" onPress={pickImageAsync} />
+          <Button label="Use this photo" onPress={() => setShowAppOptions(true)} />
+        </View>
+      )}
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#25292e',
+    alignItems: 'center',
+  },
+  imageContainer: {
+    flex: 1,
+  },
+  footerContainer: {
+    flex: 1 / 3,
+    alignItems: 'center',
+  },
+  optionsContainer: {
+    position: 'absolute',
+    bottom: 80,
+  },
+  optionsRow: {
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+});
+```
+
+## **Create an emoji picker modal** ##
+
+Для выбора стикеров создается компонент src/components/emoji-picker.tsx. Он принимает три пропса: булево состояние видимости isVisible, функцию закрытия onClose и дочерние элементы children. В основе лежит встроенный компонент <Modal>, который плавно выезжает снизу благодаря параметру animationType="slide". Проп transparent={true} позволяет модалке не перекрывать весь экран, а занимать лишь нижние 25% высоты, выводя заголовок «Choose a sticker» и иконку закрытия close из пакета MaterialIcons:
+
+```
+import { Modal, View, Text, Pressable, StyleSheet } from 'react-native';
+import { PropsWithChildren } from 'react';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+
+type Props = PropsWithChildren<{
+  isVisible: boolean;
+  onClose: () => void;
+}>;
+
+export default function EmojiPicker({ isVisible, children, onClose }: Props) {
+  return (
+    <View>
+      <Modal animationType="slide" transparent={true} visible={isVisible}>
+        <View style={styles.modalContent}>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>Choose a sticker</Text>
+            <Pressable onPress={onClose}>
+              <MaterialIcons name="close" color="#fff" size={22} />
+            </Pressable>
+          </View>
+          {children}
+        </View>
+      </Modal>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  modalContent: {
+    height: '25%',
+    width: '100%',
+    backgroundColor: '#25292e',
+    borderTopRightRadius: 18,
+    borderTopLeftRadius: 18,
+    position: 'absolute',
+    bottom: 0,
+  },
+  titleContainer: {
+    height: '16%',
+    backgroundColor: '#464C55',
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10,
+    paddingHorizontal: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  title: {
+    color: '#fff',
+    fontSize: 16,
+  },
+});
+```
+
+## **Display a list of emoji** ##
+
+Для отображения горизонтального списка картинок-стикеров внутри модального окна используется компонент <FlatList>. В новом файле src/components/emoji-list.tsx создается массив локальных путей к изображениям. Внутри списка проп horizontal разворачивает прокрутку по горизонтали, а модуль Platform.OS === 'web' включает отображение полосы скролла только для веб-версии. Каждое изображение оборачивается в <Pressable>, чтобы при клике срабатывала функция выбора onSelect и закрытие окна через onCloseModal:
+
+```
+import { useState } from 'react';
+import { ImageSourcePropType, StyleSheet, FlatList, Platform, Pressable } from 'react-native';
+import { Image } from 'expo-image';
+
+type Props = {
+  onSelect: (image: ImageSourcePropType) => void;
+  onCloseModal: () => void;
+};
+
+export default function EmojiList({ onSelect, onCloseModal }: Props) {
+  const [emoji] = useState<ImageSourcePropType[]>([
+    require("@/assets/images/emoji1.png"),
+    require("@/assets/images/emoji2.png"),
+    require("@/assets/images/emoji3.png"),
+    require("@/assets/images/emoji4.png"),
+    require("@/assets/images/emoji5.png"),
+    require("@/assets/images/emoji6.png"),
+  ]);
+
+  return (
+    <FlatList
+      horizontal
+      showsHorizontalScrollIndicator={Platform.OS === 'web'}
+      data={emoji}
+      contentContainerStyle={styles.listContainer}
+      renderItem={({ item, index }) => (
+        <Pressable
+          onPress={() => {
+            onSelect(item);
+            onCloseModal();
+          }}>
+          <Image source={item} key={index} style={styles.image} />
+        </Pressable>
+      )}
+    />
+  );
+}
+
+const styles = StyleSheet.create({
+  listContainer: {
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10,
+    paddingHorizontal: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  image: {
+    width: 100,
+    height: 100,
+    marginRight: 20,
+  },
+});
+```
+
+## **Display the selected emoji** ##
+
+Чтобы отобразить выбранный стикер поверх основного изображения, создается файл src/components/emoji-sticker.tsx. Компонент принимает два пропса: размер картинки imageSize (понадобится для будущего масштабирования) и источник файла stickerSource. С помощью стилей top: -350 элемент сдвигается наверх, накладываясь на область главной фотографии: 
+
+```
+import { ImageSourcePropType, View } from 'react-native';
+import { Image } from 'expo-image';
+
+type Props = {
+  imageSize: number;
+  stickerSource: ImageSourcePropType;
+};
+
+export default function EmojiSticker({ imageSize, stickerSource }: Props) {
+  return (
+    <View style={{ top: -350 }}>
+      <Image source={stickerSource} style={{ width: imageSize, height: imageSize }} />
+    </View>
+  );
+}
+```
+
+# **Add gestures**
+
+## **GestureHandlerRootView** ##
+
+Для поддержки жестов корневой компонент View в файле src/app/(tabs)/index.tsx заменяется на GestureHandlerRootView из библиотеки react-native-gesture-handler. Он инициализирует нативную систему отслеживания касаний для всего приложения:
+
+```
+// ... rest of the import statements remain same
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
+export default function Index() {
+  return (
+    <GestureHandlerRootView style={styles.container}>
+      {/* ...rest of the code remains */}
+    </GestureHandlerRootView>
+  )
+}
+```
+
+## **Use animated components** ##
+
+Анимация состояний стикера реализуется через библиотеку react-native-reanimated. В файле src/components/emoji-sticker.tsx стандартный тег изображения заменяется на Animated.Image, что позволяет плавно изменять его свойства (размер, координаты) на основе анимированных стилей:
+
+```
+import { ImageSourcePropType, View } from 'react-native';
+import Animated from 'react-native-reanimated';
+
+type Props = {
+  imageSize: number;
+  stickerSource: ImageSourcePropType;
+};
+
+export default function EmojiSticker({ imageSize, stickerSource }: Props) {
+  return (
+    <View style={{ top: -350 }}>
+      <Animated.Image
+        source={stickerSource}
+        resizeMode="contain"
+        style={{ width: imageSize, height: imageSize }}
+      />
+    </View>
+  );
+}
+```
+
+## **Add a tap gesture** ##
+
+Двойной клик настраивается для увеличения и уменьшения стикера. С помощью хука useSharedValue создается переменная scaleImage. Объект жеста Gesture.Tap().numberOfTaps(2) при срабатывании умножает текущий размер на два или возвращает его к исходному значению. Чтобы изменения происходили плавно с эффектом пружины, используется функция withSpring, а сам анимированный стиль формируется через хук useAnimatedStyle. Изображение Animated.Image оборачивается в компонент GestureDetector с передачей этого жеста:
+
+```
+// ...rest of the import statements remain same
+import { Gesture, GestureDetector } from 'react-native-gesture-handler';
+import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
+
+export default function EmojiSticker({ imageSize, stickerSource }: Props) {
+  const scaleImage = useSharedValue(imageSize);
+
+  return (
+    // ...rest of the code remains same
+  )
+}
+```
+
+## **Add a pan gesture** ##
+
+Перетаскивание стикера по экрану реализуется через жест панорамирования Gesture.Pan(). Координаты перемещения отслеживаются по осям X и Y через новые общие переменные translateX и translateY, которые изначально равны нулю. Колбэк .onChange() обновляет эти значения на величину сдвига пальца (event.changeX и event.changeY). Родителем всей конструкции становится Animated.View, который принимает анимированный стиль трансформации transform: [{ translateX }, { translateY }] и оборачивается в верхнеуровневый GestureDetector для обработки перетаскивания:
+
+```
+export default function EmojiSticker({ imageSize, stickerSource }: Props) {
+  const scaleImage = useSharedValue(imageSize);
+  const translateX = useSharedValue(0);
+  const translateY = useSharedValue(0);
+  // ...rest of the code remains same
+
+  return (
+    <Animated.View style={{ top: -350 }}>
+      <GestureDetector gesture={doubleTap}>
+        {/* ...rest of the code remains same */}
+      </GestureDetector>
+    </Animated.View>
+  );
+}
+```
+
+# **Take a screenshot**
+
+## **Install libraries** ##
+
+Для создания снимка экрана и его сохранения в галерею используются сторонние библиотеки react-native-view-shot и expo-media-library. Они устанавливаются одной командой npx expo install react-native-view-shot expo-media-library.
+
+```
+npx expo install react-native-view-shot expo-media-library
+```
+
+## **Prompt for permissions** ##
+
+Для доступа к медиагалерее устройства запрашиваются разрешения. С помощью хука ImagePicker.useMediaLibraryPermissions() в src/app/(tabs)/index.tsx создается проверка статуса. Через useEffect при первом запуске приложения, если доступ еще не получен (!permissionResponse?.granted), автоматически вызывается метод requestPermission(). При одобрении статус меняется на granted:
+
+```
+import { useEffect, useState } from 'react';
+import * as ImagePicker from 'expo-image-picker';
+
+// ...rest of the code remains same
+
+export default function Index() {
+  const [permissionResponse, requestPermission] = ImagePicker.useMediaLibraryPermissions();
+  // ...rest of the code remains same
+
+  useEffect(() => {
+    if (!permissionResponse?.granted) {
+      requestPermission();
+    }
+  }, []);
+
+  // ...rest of the code remains same
+}
+```
+
+## **Create a ref to save the current view** ##
+
+Библиотека react-native-view-shot делает снимок конкретного контейнера через метод captureRef(). Для этого в главном файле создается ссылка imageRef = useRef View (null). В эту ссылку оборачивается область с основным изображением ImageViewer и наложенным стикером EmojiSticker. Проп collapsable={false} передается обязательно, чтобы оптимизатор React Native не сжимал этот View, иначе сделать скриншот только выбранной зоны не получится:
+
+```
+import { useState, useRef } from 'react';
+import { captureRef } from 'react-native-view-shot';
+
+export default function Index() {
+   const imageRef = useRef<View>(null);
+
+  // ...rest of the code remains same
+
+  return (
+    <GestureHandlerRootView style={styles.container}>
+      <View style={styles.imageContainer}>
+        <View ref={imageRef} collapsable={false}>
+          <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage} />
+          {pickedEmoji && <EmojiSticker imageSize={40} stickerSource={pickedEmoji} />}
+        </View>
+      </View>
+      {/* ...rest of the code remains same */}
+    </GestureHandlerRootView>
+  );
+}
+```
+
+## **Capture a screenshot and save it** ##
+
+Сама процедура описывается внутри асинхронной функции onSaveImageAsync. Метод captureRef(imageRef, { height: 440, quality: 1 }) фотографирует область по ссылке и возвращает локальный путь к файлу localUri. Затем этот путь передается в метод MediaLibrary.saveToLibraryAsync(localUri), который записывает готовое изображение в память устройства, после чего выводится уведомление alert('Saved!'):
+
+```
+import * as ImagePicker from 'expo-image-picker';
+import * as MediaLibrary from 'expo-media-library';
+import { useEffect, useRef, useState } from 'react';
+import { ImageSourcePropType, StyleSheet, View } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { captureRef } from 'react-native-view-shot';
+
+import Button from '@/components/button';
+import CircleButton from '@/components/circle-button';
+import EmojiList from '@/components/emoji-list';
+import EmojiPicker from '@/components/emoji-picker';
+import IconButton from '@/components/icon-button';
+import ImageViewer from '@/components/image-viewer';
+
+import EmojiSticker from '@/components/emoji-sticker';
+
+const PlaceholderImage = require('@/assets/images/background-image.png');
+
+export default function Index() {
+  const [selectedImage, setSelectedImage] = useState<string | undefined>(
+    undefined
+  );
+  const [showAppOptions, setShowAppOptions] = useState<boolean>(false);
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+  const [pickedEmoji, setPickedEmoji] = useState<
+    ImageSourcePropType | undefined
+  >(undefined);
+  const [permissionResponse, requestPermission] = ImagePicker.useMediaLibraryPermissions();
+  const imageRef = useRef<View>(null);
+
+  useEffect(() => {
+    if (!permissionResponse?.granted) {
+      requestPermission();
+    }
+  }, []);
+
+  const pickImageAsync = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ['images'],
+      allowsEditing: true,
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setSelectedImage(result.assets[0].uri);
+      setShowAppOptions(true);
+    } else {
+      alert('You did not select any image.');
+    }
+  };
+
+  const onReset = () => {
+    setShowAppOptions(false);
+  };
+
+  const onAddSticker = () => {
+    setIsModalVisible(true);
+  };
+
+  const onModalClose = () => {
+    setIsModalVisible(false);
+  };
+
+  const onSaveImageAsync = async () => {
+    try {
+      const localUri = await captureRef(imageRef, {
+        height: 440,
+        quality: 1,
+      });
+
+      await MediaLibrary.saveToLibraryAsync(localUri);
+      if (localUri) {
+        alert('Saved!');
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  return (
+    <GestureHandlerRootView style={styles.container}>
+      <View style={styles.imageContainer}>
+        <View ref={imageRef} collapsable={false}>
+          <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage} />
+          {pickedEmoji && <EmojiSticker imageSize={40} stickerSource={pickedEmoji} />}
+        </View>
+      </View>
+      {showAppOptions ? (
+        <View style={styles.optionsContainer}>
+          <View style={styles.optionsRow}>
+            <IconButton icon="refresh" label="Reset" onPress={onReset} />
+            <CircleButton onPress={onAddSticker} />
+            <IconButton icon="save-alt" label="Save" onPress={onSaveImageAsync} />
+          </View>
+        </View>
+      ) : (
+        <View style={styles.footerContainer}>
+          <Button theme="primary" label="Choose a photo" onPress={pickImageAsync} />
+          <Button label="Use this photo" onPress={() => setShowAppOptions(true)} />
+        </View>
+      )}
+      <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
+        <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose} />
+      </EmojiPicker>
+    </GestureHandlerRootView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#25292e',
+    alignItems: 'center',
+  },
+  imageContainer: {
+    flex: 1,
+  },
+  footerContainer: {
+    flex: 1 / 3,
+    alignItems: 'center',
+  },
+  optionsContainer: {
+    position: 'absolute',
+    bottom: 80,
+  },
+  optionsRow: {
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+});
+```
+
+# **Handle platform differences**
+
+## **Install and import dom-to-image** ##
+
+Мобильная библиотека react-native-view-shot не умеет делать скриншоты в веб-браузерах. Для реализации этой функции на веб-платформе используется библиотека dom-to-image, которая преобразует любой DOM-узел в изображение. Она устанавливается через обычный менеджер пакетов командой npm install dom-to-image. После установки сервер перезапускается, а веб-версия открывается клавишей W.
+
+```
+npm install dom-to-image
+```
+
+## **Add platform-specific code** ##
+
+Для разделения логики между устройствами используется встроенный модуль Platform из react-native. В файле src/app/(tabs)/index.tsx импортируются модуль Platform и библиотека domtoimage. Внутри функции onSaveImageAsync создается ветвление через проверку условия Platform.OS !== 'web'.
+
+Если это мобильная платформа, выполняется прежний код с использованием captureRef и MediaLibrary. Если приложение запущено в вебе, метод domtoimage.toJpeg принимает ссылку на текущий DOM-элемент imageRef.current, генерирует строку dataUrl в формате JPEG с заданными размерами (320x440) и качеством. Затем динамически создается скрытый html-тег ссылки a, ему присваивается имя файла sticker-smash.jpeg, и через программный клик link.click() запускается стандартное скачивание картинки браузером:
+
+```
+import * as ImagePicker from 'expo-image-picker';
+import * as MediaLibrary from 'expo-media-library';
+import { useEffect, useRef, useState } from 'react';
+import { ImageSourcePropType, View, StyleSheet, Platform } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { captureRef } from 'react-native-view-shot';
+import domtoimage from 'dom-to-image';
+
+import Button from '@/components/button';
+import ImageViewer from '@/components/image-viewer';
+import IconButton from '@/components/icon-button';
+import CircleButton from '@/components/circle-button';
+import EmojiPicker from '@/components/emoji-picker';
+import EmojiList from '@/components/emoji-list';
+import EmojiSticker from '@/components/emoji-sticker';
+
+const PlaceholderImage = require('@/assets/images/background-image.png');
+
+export default function Index() {
+  const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
+  const [showAppOptions, setShowAppOptions] = useState<boolean>(false);
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+  const [pickedEmoji, setPickedEmoji] = useState<ImageSourcePropType | undefined>(undefined);
+  const [permissionResponse, requestPermission] = ImagePicker.useMediaLibraryPermissions();
+  const imageRef = useRef<View>(null);
+
+  useEffect(() => {
+    if (!permissionResponse?.granted) {
+      requestPermission();
+    }
+  }, []);
+
+  const pickImageAsync = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ['images'],
+      allowsEditing: true,
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setSelectedImage(result.assets[0].uri);
+      setShowAppOptions(true);
+    } else {
+      alert('You did not select any image.');
+    }
+  };
+
+  const onReset = () => {
+    setShowAppOptions(false);
+  };
+
+  const onAddSticker = () => {
+    setIsModalVisible(true);
+  };
+
+  const onModalClose = () => {
+    setIsModalVisible(false);
+  };
+
+  const onSaveImageAsync = async () => {
+    if (Platform.OS !== 'web') {
+      try {
+        const localUri = await captureRef(imageRef, {
+          height: 440,
+          quality: 1,
+        });
+
+        await MediaLibrary.saveToLibraryAsync(localUri);
+        if (localUri) {
+          alert('Saved!');
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      try {
+        const dataUrl = await domtoimage.toJpeg(imageRef.current, {
+          quality: 0.95,
+          width: 320,
+          height: 440,
+        });
+
+        let link = document.createElement('a');
+        link.download = 'sticker-smash.jpeg';
+        link.href = dataUrl;
+        link.click();
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  };
+
+  return (
+    <GestureHandlerRootView style={styles.container}>
+      <View style={styles.imageContainer}>
+        <View ref={imageRef} collapsable={false}>
+          <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage} />
+          {pickedEmoji && <EmojiSticker imageSize={40} stickerSource={pickedEmoji} />}
+        </View>
+      </View>
+      {showAppOptions ? (
+        <View style={styles.optionsContainer}>
+          <View style={styles.optionsRow}>
+            <IconButton icon="refresh" label="Reset" onPress={onReset} />
+            <CircleButton onPress={onAddSticker} />
+            <IconButton icon="save-alt" label="Save" onPress={onSaveImageAsync} />
+          </View>
+        </View>
+      ) : (
+        <View style={styles.footerContainer}>
+          <Button theme="primary" label="Choose a photo" onPress={pickImageAsync} />
+          <Button label="Use this photo" onPress={() => setShowAppOptions(true)} />
+        </View>
+      )}
+      <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
+        <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose} />
+      </EmojiPicker>
+    </GestureHandlerRootView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#25292e',
+    alignItems: 'center',
+  },
+  imageContainer: {
+    flex: 1,
+  },
+  footerContainer: {
+    flex: 1 / 3,
+    alignItems: 'center',
+  },
+  optionsContainer: {
+    position: 'absolute',
+    bottom: 80,
+  },
+  optionsRow: {
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+});
+```
+
+# **Configure status bar, splash screen and app icon**
+
+## **Configure the status bar** ##
+
+Библиотека expo-status-bar уже предустановлена в проекте. Для настройки системной верхней панели устройств в корневом макете src/app/_layout.tsx импортируется компонент StatusBar. Он группируется вместе с существующим Stack с помощью React-фрагмента, а его пропсу задается значение style="light", чтобы сделать иконки времени, батареи и сети белыми для темной темы приложения: 
+
+```
+import { Stack } from 'expo-router';
+
+import { StatusBar } from 'expo-status-bar';
+
+
+export default function RootLayout() {
+  return (
+    <>
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      </Stack>
+      <StatusBar style="light" />
+    </>
+  );
+}
+```
+
+## **App icon** ##
+
+За иконку приложения отвечает файл assets/images/icon.png размером 1024x1024 пикселей. Путь к ней прописывается в конфигурационном файле app.json в свойстве "icon". По умолчанию там уже указан правильный путь "./assets/images/icon.png", поэтому менять ничего не нужно. При финальной сборке сервис EAS (Expo Application Services) сам оптимизирует это изображение под экраны разных устройств.
+
+## **Splash screen** ##
+
+Заставка (сплэш-скрин) отображается во время загрузки ресурсов приложения и скрывается автоматически. Плагин expo-splash-screen уже встроен в проект. В файле app.json он по умолчанию настроен на использование картинки из скачанных ассетов через блок "plugins":
+
+```
+{
+  "plugins": [
+    [
+      "expo-splash-screen",
+      {
+        "image": "./assets/images/splash-icon.png"
+      }
+    ]
+  ]
+}
+```
+
+# **Learning resources**
+
+## **Build your project into an app** ##
+
+Для создания нового чистого проекта на своем компьютере используется команда npx create-expo-app@latest, после чего окружение настраивается пошагово.
+
+**Рекомендованные ресурсы по Expo:**
+
+* **Инструменты разработки:** справочник по утилитам Expo, которые помогают на разных этапах создания приложения.
+* **Кастомные сборки** дают полный контроль над процессом компиляции и позволяют тестировать код непосредственно на физическом устройстве или симуляторе.
+* **Обзор разработки** высокоуровневое руководство по ключевым концепциям Expo и организации основного цикла написания кода.
+* **Expo Router** официальная документация для более глубокого изучения файловой навигации.
+* **Кастомизация дизайна**  руководства по настройке иконки приложения, экрана загрузки и полный справочник параметров файла app.json.
+* **Публикация в сторы** инструкции по дистрибуции, релизу и отправке готового продукта в Google Play и App Store.
+* **Отладка** описание инструментов поиска и исправления ошибок в коде, когда что-то идет не так.
+
+**Ресурсы по React и React Native:**
+ 
+* **React** для уверенной работы рекомендуется изучить разделы «Быстрый старт» (Quick Start) и «Хуки» (Hooks) в официальной документации React.
+* **React Native** базовое руководство по основам, а также API-справочники для компонентов <View> и <Text>, работы с платформозависимым кодом и вывода списков.
+* **Верстка** руководства по управлению шириной/высотой (Height and Width) и позиционированию элементов с помощью Flexbox.
+* **Жесты и анимация** детальная документация по библиотекам React Native Gesture Handler и React Native Reanimated.
+
+Сообщество. Задать вопросы и пообщаться с другими разработчиками можно в официальном Discord-канале Expo.
