@@ -34,6 +34,20 @@ export default function TabLayout() {
           ),
         }}
       />
+        <Tabs.Screen
+    name="datetime"
+    options={{
+      title: 'Дата и Время',
+      tabBarIcon: ({ color, focused }) => (
+        <Ionicons 
+          name={focused ? 'time' : 'time-outline'} 
+          color={color} 
+          size={24} 
+        />
+      ),
+    }}
+  />
+
     </Tabs>
   );
 }
